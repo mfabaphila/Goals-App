@@ -1,0 +1,84 @@
+body{
+  background-color:rgb(237, 237, 223);
+}
+
+h1{
+  color: tomato;
+
+  border-radius: 20px;
+}
+
+.setGoals {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+
+  justify-content: center;
+}
+
+label {
+  display: inline-block;
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  color: salmon;
+}
+
+select {
+  height: 30px;
+  width: 200px;
+  color: brown;
+}
+
+option {
+  height: 20px;
+  width: 100px;
+  color: brown;
+}
+#goalInput {
+  height: 30px;
+  width: 300px;
+  color: brown;
+}
+button {
+  height: 40px;
+  width: 200px;
+  color: whitesmoke;
+  background-color: blue;
+  border-radius: 30px;
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+
+button:hover {
+  background-color:deepskyblue;
+}
+
+.enterGoals {
+  margin-top: -1px;
+}
+table {
+  border-collapse: collapse;
+  width: 1000px;
+  margin: 10px;
+  text-align: center;
+}
+th,
+td {
+  border: 3px solid salmon;
+  padding: 10px;
+}
+.top img {
+  width: 50px;
+  height: 50px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+ p{
+  font: bolder;
+  color: salmon;
+ }
