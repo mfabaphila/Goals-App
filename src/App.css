@@ -82,3 +82,8 @@ td {
   font: bolder;
   color: salmon;
  }
+
+ #goal{
+  height: 25px;
+  margin: 5px;
+ }

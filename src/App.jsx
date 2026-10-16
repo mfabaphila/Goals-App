@@ -12,6 +12,7 @@ export default function App() {
   );
 
   const [weather, setWeather] = useState("loading weather...");
+  const [exchange, setExchange] =useState(null)
 
   function addGoal() {
     if (goal === "") {
@@ -61,6 +62,22 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=-33.9249&longitude=18.424
 
   }, [])
 
+
+useEffect(()=>{
+fetch("https://api.frankfurter.dev/v1/latest?base=USD&symbols=ZAR")
+  .then((results)=>results.json())
+  .then((data)=>{
+    setExchange(data.rates.ZAR)
+  })
+
+},
+  [])
+
+
+
+
+
+
   return (
     <div>
       <h1>My Goals</h1>
@@ -68,6 +85,8 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=-33.9249&longitude=18.424
       <p>{weather}</p>
 
    <p>{day}</p>
+
+   <p>R1 = {exchange}$</p>
 
       <select value={month} onChange={(e) => setMonth(e.target.value)}>
         <option value="">Select Month</option>
@@ -94,6 +113,7 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=-33.9249&longitude=18.424
       </select>
 
       <input
+      id="goal"
         type="text"
         value={goal}
         onChange={(e) => setGoal(e.target.value)}
