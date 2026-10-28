@@ -12,6 +12,16 @@ export default function App() {
   );
 
   const [weather, setWeather] = useState("loading weather...");
+  const[exchangeRate, setExchangeRate] =useState(null)
+
+  useEffect(()=>{
+    fetch("https://open.er-api.com/v6/latest/USD")
+    .then((results)=>results.json())
+    .then((data)=>{
+      setExchangeRate(data.rates.ZAR.toString().slice(0, 5))
+    })
+  },
+    [])
 
   function addGoal() {
     if (goal === "") {
@@ -63,7 +73,9 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=-33.9249&longitude=18.424
 
   return (
     <div>
+
       <h1>My Goals</h1>
+      <p style={{color:"brown"}}>R1 = {exchangeRate}$</p>
 
       <p>{weather}</p>
 
